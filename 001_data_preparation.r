@@ -25,3 +25,15 @@ Salaries <- read_sav("salaries.sav")
 
 # import data from SAS
 Salaries <- read_sas("salaries.sas7bdat")
+
+library(dplyr)
+
+# keep the variables name, height, and gender
+newdata <- select(starwars, name, height, gender)
+
+# keep the variables name and all variables 
+# between mass and species inclusive
+newdata <- select(starwars, name, mass:species)
+
+# keep all variables except birth_year and gender
+newdata <- select(starwars, -birth_year, -gender)
